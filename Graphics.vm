@@ -1,0 +1,260 @@
+function Graphics.new 0
+push constant 1
+call Memory.alloc 1
+pop pointer 0
+push pointer 0
+return
+function Graphics.drawHero 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+push constant 32
+push argument 2
+call Math.multiply 2
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 2016
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 14492
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 10516
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 1184
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 832
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 704
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 4488
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 5544
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 5544
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 5544
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 2064
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 2448
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 2640
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 2640
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 2640
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 32382
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Graphics.removeHero 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push argument 1
+push argument 2
+push argument 1
+push constant 15
+add
+push argument 2
+push constant 15
+add
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+function Graphics.drawMonster 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+push constant 32
+push argument 2
+call Math.multiply 2
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 960
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 2016
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 2016
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 960
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 384
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 384
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 4080
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 3024
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 3024
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 3024
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 2016
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 1632
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 1056
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 1056
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 1056
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 15420
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Graphics.removeMonster 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push argument 1
+push argument 2
+push argument 1
+push constant 15
+add
+push argument 2
+push constant 15
+add
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return

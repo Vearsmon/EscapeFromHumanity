@@ -1,0 +1,69 @@
+class Graphics
+{
+    field int x;
+
+    constructor Graphics new()
+    {
+        return this;
+    }
+
+    method void drawHero(int x, int y)
+    {
+        var int memAddress;
+        let memAddress = 16384 + x + (32 * y);
+        do Memory.poke(memAddress + 0, 2016);
+        do Memory.poke(memAddress + 32, 14492);
+        do Memory.poke(memAddress + 64, 10516);
+        do Memory.poke(memAddress + 96, 1184);
+        do Memory.poke(memAddress + 128, 832);
+        do Memory.poke(memAddress + 160, 704);
+        do Memory.poke(memAddress + 192, 4488);
+        do Memory.poke(memAddress + 224, 5544);
+        do Memory.poke(memAddress + 256, 5544);
+        do Memory.poke(memAddress + 288, 5544);
+        do Memory.poke(memAddress + 320, 2064);
+        do Memory.poke(memAddress + 352, 2448);
+        do Memory.poke(memAddress + 384, 2640);
+        do Memory.poke(memAddress + 416, 2640);
+        do Memory.poke(memAddress + 448, 2640);
+        do Memory.poke(memAddress + 480, 32382);
+        return;
+    }
+
+    method void removeHero(int x, int y)
+    {
+        do Screen.setColor(false);
+        do Screen.drawRectangle(x, y, x + 15, y + 15);
+        return;
+    }
+
+    method void drawMonster(int x, int y)
+    {
+        var int memAddress;
+        let memAddress = 16384 + x + (32 * y);
+        do Memory.poke(memAddress + 0, 960);
+        do Memory.poke(memAddress + 32, 2016);
+        do Memory.poke(memAddress + 64, 2016);
+        do Memory.poke(memAddress + 96, 960);
+        do Memory.poke(memAddress + 128, 384);
+        do Memory.poke(memAddress + 160, 384);
+        do Memory.poke(memAddress + 192, 4080);
+        do Memory.poke(memAddress + 224, 3024);
+        do Memory.poke(memAddress + 256, 3024);
+        do Memory.poke(memAddress + 288, 3024);
+        do Memory.poke(memAddress + 320, 2016);
+        do Memory.poke(memAddress + 352, 1632);
+        do Memory.poke(memAddress + 384, 1056);
+        do Memory.poke(memAddress + 416, 1056);
+        do Memory.poke(memAddress + 448, 1056);
+        do Memory.poke(memAddress + 480, 15420);
+        return;
+    }
+
+    method void removeMonster(int x, int y)
+    {
+        do Screen.setColor(false);
+        do Screen.drawRectangle(x, y, x + 15, y + 15);
+        return;
+    }
+}
