@@ -1,0 +1,31 @@
+class Game
+{
+    field bolean win;
+    field bolean failed;
+
+    constructor Game new()
+    {
+        return this;
+    }
+
+    //Приветствие
+    method void showHello()
+    {
+        do Screen.setColor(true);
+        do Output.moveCursor(4, 8);
+        do Output.printString("Privetik!");
+        do Output.moveCursor(8, 8);
+        do Output.printString("Slabo do sunduka doletetb");
+        do Output.moveCursor(10, 8);
+        do Output.printString("Ksta cheliki mogut tebya koknutb");
+        do Output.moveCursor(14, 8);
+        do Output.printString("GLHF!");
+        return;
+    }
+
+    method void dispose()
+    {
+        do Memory.deAlloc(this);
+        return;
+    }
+}

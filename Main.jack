@@ -8,5 +8,6 @@ class Main
 
         do game.showHello();
         do Sys.wait(7000);
+        return;
     }
 }
