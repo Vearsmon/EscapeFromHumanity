@@ -23,7 +23,7 @@ class Game
         do Output.moveCursor(4, 8);
         do Output.printString("Privetik!");
         do Output.moveCursor(8, 8);
-        do Output.printString("Slabo do sunduka doletetb");
+        do Output.printString("Slabo do dveri doletetb");
         do Output.moveCursor(10, 8);
         do Output.printString("Ksta cheliki mogut tebya koknutb");
         do Output.moveCursor(14, 8);
