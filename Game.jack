@@ -59,7 +59,7 @@ class Game
         }
 
         do graphics.drawDoor(29, 231);
-        do graphics.drawHero(xPlayer, yPlayer);
+        do graphics.drawPlayer(xPlayer, yPlayer);
 
         return;
     }
