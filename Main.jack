@@ -3,11 +3,17 @@ class Main
     function void main()
     {
         var Game game;
+        var boolean win;
+        var boolean fail;
 
         let game = Game.new();
+        let win = false;
+        let fail = false;
 
         do game.showHello();
-        do Sys.wait(7000);
+        do Sys.wait(5000);
+        do game.createBoard();
+
         return;
     }
 }

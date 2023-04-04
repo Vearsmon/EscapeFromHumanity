@@ -66,4 +66,43 @@ class Graphics
         do Screen.drawRectangle(x, y, x + 15, y + 15);
         return;
     }
+
+    method void drawDoor(int x, int y)
+    {
+        var int memAddress;
+        let memAddress = 16384 + x + (32 * y);
+        do Memory.poke(memAddress + 0, 32767);
+        do Memory.poke(memAddress + 32, 16385);
+        do Memory.poke(memAddress + 64, 16385);
+        do Memory.poke(memAddress + 96, 16385);
+        do Memory.poke(memAddress + 128, 16385);
+        do Memory.poke(memAddress + 160, 16385);
+        do Memory.poke(memAddress + 192, 32257);
+        do Memory.poke(memAddress + 224, 32257);
+        do Memory.poke(memAddress + 256, 17921);
+        do Memory.poke(memAddress + 288, 17921);
+        do Memory.poke(memAddress + 320, 16385);
+        do Memory.poke(memAddress + 352, 16385);
+        do Memory.poke(memAddress + 384, 16385);
+        do Memory.poke(memAddress + 416, 16385);
+        do Memory.poke(memAddress + 448, 16385);
+        do Memory.poke(memAddress + 480, 24573);
+        do Memory.poke(memAddress + 1, 32767);
+        do Memory.poke(memAddress + 33, 16385);
+        do Memory.poke(memAddress + 65, 16385);
+        do Memory.poke(memAddress + 97, 16385);
+        do Memory.poke(memAddress + 129, 16385);
+        do Memory.poke(memAddress + 161, 16385);
+        do Memory.poke(memAddress + 193, 16447);
+        do Memory.poke(memAddress + 225, 16447);
+        do Memory.poke(memAddress + 257, 16433);
+        do Memory.poke(memAddress + 289, 16433);
+        do Memory.poke(memAddress + 321, 16385);
+        do Memory.poke(memAddress + 353, 16385);
+        do Memory.poke(memAddress + 385, 16385);
+        do Memory.poke(memAddress + 417, 16385);
+        do Memory.poke(memAddress + 449, 16385);
+        do Memory.poke(memAddress + 481, 32767);
+        return;
+    }
 }
