@@ -3,6 +3,7 @@ class Game
     field bolean win;
     field bolean fail;
     field Graphics graphics;
+    field int playerLocation;
     field int xPlayer;
     field int yPlayer;
     field Array stairs;
@@ -12,6 +13,7 @@ class Game
         let win = false;
         let fail = false;
         let graphics = Graphics.new();
+        let playerLocation = 0;
         let xPlayer = 0;
         let yPlayer = 39;
 
@@ -72,9 +74,74 @@ class Game
             let currentLine = currentLine + 1;
         }
 
+        do deployStairs();
+
+        do graphics.drawDoor(29, 231);
+        do graphics.drawPlayer(xPlayer, yPlayer);
+
+        return;
+    }
+
+    method void movePlayer(int button)
+    {
+        // Движение вправо
+        if ((button = 132) & (xPlayer < 31))
+        {
+            do graphics.removePlayer(xPlayer + (playerLocation*15), yPlayer);
+            do deployStairs();
+            let xPlayer = xPlayer + 1;
+            do graphics.drawPlayer(xPlayer, yPlayer);
+            let playerLocation = playerLocation + 1;
+            do Sys.wait(70);
+        }
+
+        // Движение влево
+        if ((button = 130) & (xPlayer > 0))
+        {
+            do graphics.removePlayer(xPlayer + (playerLocation*15), yPlayer);
+            do deployStairs();
+            let xPlayer = xPlayer - 1;
+            do graphics.drawPlayer(xPlayer, yPlayer);
+            let playerLocation = playerLocation - 1;
+            do Sys.wait(70);
+        }
+
+        // Движение вниз
+        if ((button = 133) & (yPlayer < 225) & (isStairsThere(xPlayer, yPlayer) = true))
+        {
+            do graphics.removePlayer(xPlayer + (playerLocation*15), yPlayer);
+            do deployStairs();
+            let yPlayer = yPlayer + 24;
+            do graphics.drawPlayer(xPlayer, yPlayer);
+            do Sys.wait(70);
+        }
+
+        // Движение вверх
+        if ((button = 131) & (yPlayer > 39) & (isStairsThere(xPlayer, yPlayer - 24) = true))
+        {
+            do graphics.removePlayer(xPlayer + (playerLocation*15), yPlayer);
+            do deployStairs();
+            let yPlayer = yPlayer - 24;
+            do graphics.drawPlayer(xPlayer, yPlayer);
+            do Sys.wait(70);
+        }
+
+        if (((xPlayer = 30) | (xPlayer = 29)) & (yPlayer = 231))
+        {
+            let win = true;
+        }
+
+        return;
+    }
+
+    method void deployStairs()
+    {
+        var int index;
+        var int y;
+
         let y = 57;
         let index = 0;
-        
+    
         while (index < 8)
         {
             do graphics.drawStairs(stairs[index], y);
@@ -82,10 +149,12 @@ class Game
             let index = index + 1;
         }
 
-        do graphics.drawDoor(29, 231);
-        do graphics.drawPlayer(xPlayer, yPlayer);
-
         return;
+    }
+
+    method boolean isStairsThere(int x, int y)
+    {
+        return (stairs[(y-39)/24] = x);
     }
 
     method boolean winGame()
@@ -104,11 +173,13 @@ class Game
         do Screen.setColor(false);
         do Screen.drawRectangle(0, 0, 511, 255);
         do Screen.setColor(true);
-        do Output.moveCursor(10, 25);
+        do Output.moveCursor(10, 20);
         do Output.printString("Niiiiiiiiiice bro");
         do Output.println();
-        do Output.moveCursor(12, 25);
-        do Output.printString("Pravda eto slishkom legko tak chto mozhesh ne radovatsa");
+        do Output.moveCursor(12, 20);
+        do Output.printString("Pravda eto slishkom legko");
+        do Output.moveCursor(14, 20);
+        do Output.printString("tak chto mozhesh ne radovatsa");
         return;
     }
 
@@ -118,11 +189,13 @@ class Game
         do Screen.setColor(false);
         do Screen.drawRectangle(0, 0, 511, 255);
         do Screen.setColor(true);
-        do Output.moveCursor(10, 25);
+        do Output.moveCursor(10, 20);
         do Output.printString("Ooooh man");
         do Output.println();
-        do Output.moveCursor(12, 25);
-        do Output.printString("Kak ty proigral s etim spravitsa moya pyatiletnaya sestra");
+        do Output.moveCursor(12, 20);
+        do Output.printString("Kak ty proigral s etim spravitsa");
+        do Output.moveCursor(14, 20);
+        do Output.printString("moya pyatiletnaya sestra");
         return;
     }
 

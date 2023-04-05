@@ -20,10 +20,9 @@ class Main
         while ((~win) & (~fail))
         {
             let button = Keyboard.keyPressed();
+            do game.movePlayer(button);
             let fail = game.failGame();
             let win = game.winGame();
-
-            let period = period + 1;
             let button = 0;
         }
 

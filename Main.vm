@@ -27,15 +27,15 @@ if-goto WHILE_END0
 call Keyboard.keyPressed 0
 pop local 1
 push local 0
+push local 1
+call Game.movePlayer 2
+pop temp 0
+push local 0
 call Game.failGame 1
 pop local 4
 push local 0
 call Game.winGame 1
 pop local 3
-push local 2
-push constant 1
-add
-pop local 2
 push constant 0
 pop local 1
 goto WHILE_EXP0
