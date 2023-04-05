@@ -7,6 +7,7 @@ class Game
     field int xPlayer;
     field int yPlayer;
     field Array stairs;
+    field AllEnemies allEnemies;
 
     constructor Game new()
     {
@@ -53,15 +54,13 @@ class Game
         var int currentLine;
         var int floorWidth;
         var int currentY;
-        var int index;
-        var int y;
         
         let lineCount = 9;
         let lineWidth = 2;
         let currentLine = 0;
         let floorWidth = 22;
         let currentY = 55;
-        
+
         do Screen.setColor(false);
         do Screen.drawRectangle(0, 0, 511, 255);
 
@@ -75,9 +74,9 @@ class Game
         }
 
         do deployStairs();
-
         do graphics.drawDoor(29, 231);
         do graphics.drawPlayer(xPlayer, yPlayer);
+        let allEnemies = AllEnemies.new();
 
         return;
     }
@@ -129,6 +128,26 @@ class Game
         if (((xPlayer = 30) | (xPlayer = 29)) & (yPlayer = 231))
         {
             let win = true;
+        }
+
+        if(allEnemies.isEnemyThere(xPlayer, yPlayer))
+        {
+            let fail = true;
+        }
+
+        return;
+    }
+
+    method void moveEnemy()
+    {
+        do deployStairs();
+        do allEnemies.run();
+        do graphics.drawDoor(29, 231);
+        do graphics.drawPlayer(xPlayer, yPlayer);
+
+        if (allEnemies.isEnemyThere(xPlayer, yPlayer))
+        {
+            let fail = true;
         }
 
         return;

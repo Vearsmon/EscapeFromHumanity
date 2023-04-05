@@ -1,0 +1,69 @@
+class Enemy
+{
+    field int x;
+    field int y;
+    field boolean moveLeft;
+    field int enemyLocation;
+    field Graphics enemyGraphics;
+
+    constructor Enemy new(int xEnemy, int yEnemy, boolean moveDirection)
+    {
+        let x = xEnemy;
+        let y = yEnemy;
+        let enemyLocation = xEnemy;
+        let moveLeft = moveDirection;
+        let enemyGraphics = Graphics.new();
+        do enemyGraphics.drawEnemy(x, y);
+
+        return this;
+    }
+
+    method int getXCoord()
+    {
+        return x;
+    }
+
+    method int getYCoord()
+    {
+        return y;
+    }
+
+    method void moveEnemy()
+    {
+        //Движение влево до конца
+        if ((x > 0) & (moveLeft))
+        {
+            do enemyGraphics.removeEnemy(x + (enemyLocation * 15), y);
+            let x = x - 1;
+            do enemyGraphics.drawEnemy(x, y);
+            let enemyLocation = enemyLocation - 1;
+        }
+
+        //Движение вправо до конца
+        else
+        {
+            let moveLeft = false;
+
+            if ((x < 31) & (~moveLeft))
+            {
+                do enemyGraphics.removeEnemy(x + (enemyLocation * 15), y);
+                let x = x + 1;
+                do enemyGraphics.drawEnemy(x, y);
+                let enemyLocation = enemyLocation + 1;
+            }
+
+            else
+            {
+                let moveLeft = true;
+            }
+        }
+
+        return;
+    }
+
+    method void dispose()
+    {
+        do Memory.deAlloc(this);
+        return;
+    }
+}

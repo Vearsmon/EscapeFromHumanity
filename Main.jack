@@ -23,6 +23,15 @@ class Main
             do game.movePlayer(button);
             let fail = game.failGame();
             let win = game.winGame();
+
+            if (period > 2000)
+            {
+                do game.moveEnemy();
+                let fail = game.failGame();
+                let period = 0;
+            }
+            
+            let period = period + 1;
             let button = 0;
         }
 
