@@ -37,7 +37,7 @@ class Graphics
         return;
     }
 
-    method void drawMonster(int x, int y)
+    method void drawEnemy(int x, int y)
     {
         var int memAddress;
         let memAddress = 16384 + x + (32 * y);
@@ -60,7 +60,7 @@ class Graphics
         return;
     }
 
-    method void removeMonster(int x, int y)
+    method void removeEnemy(int x, int y)
     {
         do Screen.setColor(false);
         do Screen.drawRectangle(x, y, x + 15, y + 15);
@@ -103,6 +103,36 @@ class Graphics
         do Memory.poke(memAddress + 417, 16385);
         do Memory.poke(memAddress + 449, 16385);
         do Memory.poke(memAddress + 481, 32767);
+        return;
+    }
+
+    method void drawStairs(int x, int y) {
+        var int memAddress;
+        let memAddress = 16384 + x + (32 * y);
+        do Memory.poke(memAddress+0, 16414);
+        do Memory.poke(memAddress+32, 16610);
+	    do Memory.poke(memAddress+64, 18178);
+	    do Memory.poke(memAddress+96, 30722);
+	    do Memory.poke(memAddress+128, 18178);
+	    do Memory.poke(memAddress+160, 16610);
+	    do Memory.poke(memAddress+192, 16414);
+	    do Memory.poke(memAddress+224, 16610);
+	    do Memory.poke(memAddress+256, 18178);
+	    do Memory.poke(memAddress+288, 30722);
+	    do Memory.poke(memAddress+320, 18178);
+	    do Memory.poke(memAddress+352, 16610);
+	    do Memory.poke(memAddress+384, 16414);
+	    do Memory.poke(memAddress+416, 16610);
+	    do Memory.poke(memAddress+448, 18178);
+	    do Memory.poke(memAddress+480, 30722);
+        do Memory.poke(memAddress+512, 18178);
+	    do Memory.poke(memAddress+544, 16610);
+	    do Memory.poke(memAddress+576, 16414);
+	    do Memory.poke(memAddress+608, 16610);
+	    do Memory.poke(memAddress+640, 18178);
+	    do Memory.poke(memAddress+672, 30722);
+        do Memory.poke(memAddress+704, 16380);
+        do Memory.poke(memAddress+736, 16380);
         return;
     }
 }

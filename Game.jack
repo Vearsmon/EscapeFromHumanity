@@ -5,6 +5,7 @@ class Game
     field Graphics graphics;
     field int xPlayer;
     field int yPlayer;
+    field Array stairs;
 
     constructor Game new()
     {
@@ -13,6 +14,17 @@ class Game
         let graphics = Graphics.new();
         let xPlayer = 0;
         let yPlayer = 39;
+
+        let stairs = Array.new(8);
+        let stairs[0] = 8;
+        let stairs[1] = 17;
+        let stairs[2] = 15;
+        let stairs[3] = 19;
+        let stairs[4] = 6;
+        let stairs[5] = 31;
+        let stairs[6] = 13;
+        let stairs[7] = 4;
+
         return this;
     }
 
@@ -39,6 +51,8 @@ class Game
         var int currentLine;
         var int floorWidth;
         var int currentY;
+        var int index;
+        var int y;
         
         let lineCount = 9;
         let lineWidth = 2;
@@ -56,6 +70,16 @@ class Game
             do Screen.drawRectangle(0, currentY, 511, currentY + lineWidth);
             let currentY = currentY + lineWidth + floorWidth;
             let currentLine = currentLine + 1;
+        }
+
+        let y = 57;
+        let index = 0;
+        
+        while (index < 8)
+        {
+            do graphics.drawStairs(stairs[index], y);
+            let y = y + 24;
+            let index = index + 1;
         }
 
         do graphics.drawDoor(29, 231);

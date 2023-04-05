@@ -3,17 +3,42 @@ class Main
     function void main()
     {
         var Game game;
+        var int button;
+        var int period;
         var boolean win;
         var boolean fail;
 
         let game = Game.new();
         let win = false;
         let fail = false;
+        let period = 0;
 
         do game.showHello();
         do Sys.wait(5000);
         do game.createBoard();
 
+        while ((~win) & (~fail))
+        {
+            let button = Keyboard.keyPressed();
+            let fail = game.failGame();
+            let win = game.winGame();
+
+            let period = period + 1;
+            let button = 0;
+        }
+
+        if (win)
+        {
+            do game.showWin();
+        }
+
+        else
+        {
+            do game.showFail();
+        }
+
+        do game.dispose();
+        do Sys.wait(1000);
         return;
     }
 }

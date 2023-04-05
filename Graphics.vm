@@ -131,7 +131,7 @@ call Screen.drawRectangle 4
 pop temp 0
 push constant 0
 return
-function Graphics.drawMonster 1
+function Graphics.drawEnemy 1
 push argument 0
 pop pointer 0
 push constant 16384
@@ -240,7 +240,7 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
-function Graphics.removeMonster 0
+function Graphics.removeEnemy 0
 push argument 0
 pop pointer 0
 push constant 0
@@ -459,6 +459,163 @@ push local 0
 push constant 481
 add
 push constant 32767
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Graphics.drawStairs 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 1
+add
+push constant 32
+push argument 2
+call Math.multiply 2
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 16414
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 16610
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 18178
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 30722
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 18178
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 16610
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 16414
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 16610
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 18178
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 30722
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 18178
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 16610
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 16414
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 16610
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 18178
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 30722
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 512
+add
+push constant 18178
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 544
+add
+push constant 16610
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 576
+add
+push constant 16414
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 608
+add
+push constant 16610
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 640
+add
+push constant 18178
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 672
+add
+push constant 30722
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 704
+add
+push constant 16380
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 736
+add
+push constant 16380
 call Memory.poke 2
 pop temp 0
 push constant 0
