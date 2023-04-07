@@ -1,7 +1,11 @@
-"#EscapeFromHumanity" 
+В этом репозитории находится мини-игра «Escape from humanity», написанная на языке Jack
 
-That's wassup!
+Суть игры:
 
-This is the repository of game "Escape From Humanity" written on Jaaack language
+*	Есть несколько этажей
 
-Enjoy ;)
+*	На каждом по одному врагу
+
+*	Между этажами лестницы
+
+*	Дойти до выхода в конце карты, избегая столкновений с бандитами
