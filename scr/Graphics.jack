@@ -135,4 +135,10 @@ class Graphics
         do Memory.poke(memAddress+736, 16380);
         return;
     }
+
+    method void dispose()
+    {
+        do Memory.deAlloc(this);
+        return;
+    }
 }

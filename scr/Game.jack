@@ -223,6 +223,9 @@ class Game
 
     method void dispose()
     {
+        do Array.dispose(stairs);
+        do graphics.dispose();
+        do allEnemies.dispose();
         do Memory.deAlloc(this);
         return;
     }

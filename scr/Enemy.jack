@@ -63,6 +63,7 @@ class Enemy
 
     method void dispose()
     {
+        do graphics.dispose();
         do Memory.deAlloc(this);
         return;
     }
