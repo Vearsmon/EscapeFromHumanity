@@ -10,9 +10,6 @@ pop local 2
 push local 0
 call Game.showHello 1
 pop temp 0
-push constant 5000
-call Sys.wait 1
-pop temp 0
 push local 0
 call Game.createBoard 1
 pop temp 0

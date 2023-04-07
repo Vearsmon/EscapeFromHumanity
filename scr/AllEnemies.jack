@@ -42,44 +42,15 @@ class AllEnemies
 
     method boolean isEnemyThere(int x, int y) 
     {
-        if((enemy1.getXCoord() = x) & (enemy1.getYCoord() = y))
-        {
-            return true;
-        }
-        if((enemy2.getXCoord() = x) & (enemy2.getYCoord() = y))
-        {
-            return true;
-        }
-        if((enemy3.getXCoord() = x) & (enemy3.getYCoord() = y))
-        {
-            return true;
-        }
-        if((enemy4.getXCoord() = x) & (enemy4.getYCoord() = y))
-        {
-            return true;
-        }
-        if((enemy5.getXCoord() = x) & (enemy5.getYCoord() = y))
-        {
-            return true;
-        }
-        if((enemy6.getXCoord() = x) & (enemy6.getYCoord() = y))
-        {
-            return true;
-        }
-        if((enemy7.getXCoord() = x) & (enemy7.getYCoord() = y))
-        {
-            return true;
-        }
-        if((enemy8.getXCoord() = x) & (enemy8.getYCoord() = y))
-        {
-            return true;
-        }
-        if((enemy9.getXCoord() = x) & (enemy9.getYCoord() = y))
-        {
-            return true;
-        }
-
-        return false;
+        return ((enemy1.getXCoord() = x) & (enemy1.getYCoord() = y))
+        | ((enemy2.getXCoord() = x) & (enemy2.getYCoord() = y))
+        | ((enemy3.getXCoord() = x) & (enemy3.getYCoord() = y))
+        | ((enemy4.getXCoord() = x) & (enemy4.getYCoord() = y))
+        | ((enemy5.getXCoord() = x) & (enemy5.getYCoord() = y))
+        | ((enemy6.getXCoord() = x) & (enemy6.getYCoord() = y))
+        | ((enemy7.getXCoord() = x) & (enemy7.getYCoord() = y))
+        | ((enemy8.getXCoord() = x) & (enemy8.getYCoord() = y))
+        | ((enemy9.getXCoord() = x) & (enemy9.getYCoord() = y));
     }
 
     method void dispose()

@@ -14,7 +14,6 @@ class Main
         let period = 0;
 
         do game.showHello();
-        do Sys.wait(5000);
         do game.createBoard();
 
         while ((~win) & (~fail))
