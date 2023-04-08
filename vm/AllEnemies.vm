@@ -1,244 +1,225 @@
-function AllEnemies.new 0
-push constant 9
+function AllEnemies.new 2
+push constant 3
 call Memory.alloc 1
 pop pointer 0
-push constant 31
-push constant 39
 push constant 0
-not
-call Enemy.new 3
-pop this 0
-push constant 5
-push constant 39
-push constant 24
-add
-push constant 0
-not
-call Enemy.new 3
-pop this 1
-push constant 23
-push constant 39
-push constant 24
-push constant 2
-call Math.multiply 2
-add
-push constant 0
-not
-call Enemy.new 3
+pop local 0
+push constant 9
 pop this 2
-push constant 12
-push constant 39
-push constant 24
-push constant 3
-call Math.multiply 2
-add
+push this 2
+call Array.new 1
+pop this 1
 push constant 0
-call Enemy.new 3
-pop this 3
+push this 1
+add
+push constant 31
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push constant 1
-push constant 39
-push constant 24
-push constant 4
-call Math.multiply 2
+push this 1
 add
-push constant 0
-not
-call Enemy.new 3
-pop this 4
-push constant 27
-push constant 39
-push constant 24
 push constant 5
-call Math.multiply 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 1
 add
-push constant 0
-call Enemy.new 3
-pop this 5
-push constant 18
-push constant 39
-push constant 24
+push constant 23
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 1
+add
+push constant 12
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push this 1
+add
+push constant 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 5
+push this 1
+add
+push constant 27
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push constant 6
-call Math.multiply 2
+push this 1
 add
-push constant 0
-not
-call Enemy.new 3
-pop this 6
-push constant 0
-push constant 39
-push constant 24
+push constant 18
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push constant 7
-call Math.multiply 2
+push this 1
 add
 push constant 0
-call Enemy.new 3
-pop this 7
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 8
+push this 1
+add
 push constant 20
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push this 2
+call Array.new 1
+pop this 0
+label WHILE_EXP0
+push local 0
+push this 2
+lt
+not
+if-goto WHILE_END0
+push local 0
+push this 1
+add
+pop pointer 1
+push that 0
+pop local 1
+push local 0
+push this 0
+add
+push local 1
 push constant 39
 push constant 24
-push constant 8
+push local 0
 call Math.multiply 2
 add
 push constant 0
 not
 call Enemy.new 3
-pop this 8
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
 push pointer 0
 return
-function AllEnemies.run 0
+function AllEnemies.run 2
 push argument 0
 pop pointer 0
-push this 0
-call Enemy.moveEnemy 1
-pop temp 0
-push this 1
-call Enemy.moveEnemy 1
-pop temp 0
+push constant 0
+pop local 0
+label WHILE_EXP0
+push local 0
 push this 2
+lt
+not
+if-goto WHILE_END0
+push local 0
+push this 0
+add
+pop pointer 1
+push that 0
+pop local 1
+push local 1
 call Enemy.moveEnemy 1
 pop temp 0
-push this 3
-call Enemy.moveEnemy 1
-pop temp 0
-push this 4
-call Enemy.moveEnemy 1
-pop temp 0
-push this 5
-call Enemy.moveEnemy 1
-pop temp 0
-push this 6
-call Enemy.moveEnemy 1
-pop temp 0
-push this 7
-call Enemy.moveEnemy 1
-pop temp 0
-push this 8
-call Enemy.moveEnemy 1
-pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
 push constant 0
 return
-function AllEnemies.isEnemyThere 0
+function AllEnemies.isEnemyThere 2
 push argument 0
 pop pointer 0
-push this 0
-call Enemy.getXCoord 1
-push argument 1
-eq
-push this 0
-call Enemy.getYCoord 1
-push argument 2
-eq
-and
-push this 1
-call Enemy.getXCoord 1
-push argument 1
-eq
-push this 1
-call Enemy.getYCoord 1
-push argument 2
-eq
-and
-or
+push constant 0
+pop local 0
+label WHILE_EXP0
+push local 0
 push this 2
+lt
+not
+if-goto WHILE_END0
+push local 0
+push this 0
+add
+pop pointer 1
+push that 0
+pop local 1
+push local 1
 call Enemy.getXCoord 1
 push argument 1
 eq
-push this 2
+push local 1
 call Enemy.getYCoord 1
 push argument 2
 eq
 and
-or
-push this 3
-call Enemy.getXCoord 1
-push argument 1
-eq
-push this 3
-call Enemy.getYCoord 1
-push argument 2
-eq
-and
-or
-push this 4
-call Enemy.getXCoord 1
-push argument 1
-eq
-push this 4
-call Enemy.getYCoord 1
-push argument 2
-eq
-and
-or
-push this 5
-call Enemy.getXCoord 1
-push argument 1
-eq
-push this 5
-call Enemy.getYCoord 1
-push argument 2
-eq
-and
-or
-push this 6
-call Enemy.getXCoord 1
-push argument 1
-eq
-push this 6
-call Enemy.getYCoord 1
-push argument 2
-eq
-and
-or
-push this 7
-call Enemy.getXCoord 1
-push argument 1
-eq
-push this 7
-call Enemy.getYCoord 1
-push argument 2
-eq
-and
-or
-push this 8
-call Enemy.getXCoord 1
-push argument 1
-eq
-push this 8
-call Enemy.getYCoord 1
-push argument 2
-eq
-and
-or
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+not
 return
-function AllEnemies.dispose 0
+label IF_FALSE0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function AllEnemies.dispose 2
 push argument 0
 pop pointer 0
+push constant 0
+pop local 0
+label WHILE_EXP0
+push local 0
+push this 2
+lt
+not
+if-goto WHILE_END0
+push local 0
 push this 0
+add
+pop pointer 1
+push that 0
+pop local 1
+push local 1
 call Enemy.dispose 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push this 0
+call Array.dispose 1
 pop temp 0
 push this 1
-call Enemy.dispose 1
-pop temp 0
-push this 2
-call Enemy.dispose 1
-pop temp 0
-push this 3
-call Enemy.dispose 1
-pop temp 0
-push this 4
-call Enemy.dispose 1
-pop temp 0
-push this 5
-call Enemy.dispose 1
-pop temp 0
-push this 6
-call Enemy.dispose 1
-pop temp 0
-push this 7
-call Enemy.dispose 1
-pop temp 0
-push this 8
-call Enemy.dispose 1
+call Array.dispose 1
 pop temp 0
 push pointer 0
 call Memory.deAlloc 1

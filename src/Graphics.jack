@@ -1,7 +1,7 @@
 class Graphics
 {
-    field int x;
-
+    field int placeholder;
+    
     constructor Graphics new()
     {
         return this;

@@ -223,7 +223,7 @@ class Game
 
     method void dispose()
     {
-        do Array.dispose(stairs);
+        do stairs.dispose();
         do graphics.dispose();
         do allEnemies.dispose();
         do Memory.deAlloc(this);
